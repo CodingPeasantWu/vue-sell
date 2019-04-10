@@ -12,11 +12,12 @@
                 <div class="description">{{seller.description}}/{{seller.deliveryTime}}分钟送达</div>
                 <div class="support">
                     <span class="icon decrease"></span>
-                    <span class="text">{{seller.supports[1].description}}</span>
+                    <span class="text">在线支付满28减5</span>
                 </div>      
             </div>
             <div class="support-count" @click="showDetail">
-                <span class="count">{{seller.supports.length}}个</span>
+                <!-- <span class="count">{{seller.supports.length}}个</span> -->
+                <span class="count">5个</span>
                 <i class="icon-keyboard_arrow_right"></i>
             </div>
         </div>
