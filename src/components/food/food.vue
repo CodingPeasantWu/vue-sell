@@ -26,17 +26,23 @@
             </div>
           </transition>
         </div>
-        <!-- <split v-show="food.info"></split> -->
+        <split v-show="food.info"></split>
         <div class="info" v-show="food.info">
           <h1 class="title">商品信息</h1>
           <p class="text">{{food.info}}</p>
         </div>
-        <!-- <split></split> -->
+        <split></split>
         <div class="rating">
           <h1 class="title">商品评价</h1>
-          <!-- <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType"
-                        :onlyContent="onlyContent" :desc="desc"
-                        :ratings="food.ratings"></ratingselect> -->
+          <ratingselect 
+            @select="selectRating" 
+            @toggle="toggleContent" 
+            :selectType="selectType"
+            :onlyContent="onlyContent" 
+            :desc="desc"
+            :ratings="food.ratings"
+          >
+          </ratingselect>
           <div class="rating-wrapper">
             <ul v-show="food.ratings && food.ratings.length">
               <li v-show="needShow(rating.rateType,rating.text)" v-for="rating in food.ratings"
@@ -64,8 +70,8 @@
   import Vue from 'vue';
   import {formatDate} from 'common/js/date';
   import cartcontrol from 'components/cartcontrol/cartcontrol'
-  // import ratingselect from 'components/ratingselect/ratingselect'
-  // import split from 'components/split/split';
+  import ratingselect from 'components/ratingselect/ratingselect'
+  import split from 'components/split/split';
 
   const ALL = 2;
 
@@ -146,8 +152,8 @@
     },
     components: {
       cartcontrol,
-      // ratingselect,
-      // split
+      ratingselect,
+      split
     }
   };
 </script>
@@ -188,7 +194,6 @@
           padding: 10px
           font-size: 20px
           color: #fff
-
     .content
       position: relative
       padding: 18px
@@ -298,7 +303,6 @@
               color: rgb(0, 160, 220)
             .icon-thumb_down
               color: rgb(147, 153, 159)
-
         .no-rating
           padding: 16px 0
           font-size: 12px

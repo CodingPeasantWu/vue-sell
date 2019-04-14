@@ -5,7 +5,7 @@
                 <div class="content-left">
                     <div class="logo-wrapper">
                         <div class="logo" :class="{'highlight':totalCount>0}">
-                            <i class="icon-shopping_cart"></i>
+                            <i class="icon-shopping_cart" :class="{'highlight':totalCount>0}"></i>
                         </div>
                         <div class="num" v-show="totalCount>0">{{totalCount}}</div>
                     </div>
@@ -376,7 +376,7 @@ export default {
                 position: relative
                 padding: 12px 0
                 box-sizing: border-box
-            border-1px(rgba(7, 17, 27, 0.1))
+                border-1px(rgba(7, 17, 27, 0.1))
             .name
                 line-height: 24px
                 font-size: 14px
